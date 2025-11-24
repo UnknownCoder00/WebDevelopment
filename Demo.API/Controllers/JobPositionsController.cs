@@ -25,7 +25,7 @@ public class JobPositionsController : ControllerBase
             if (dbConnection.State == ConnectionState.Open)
                 dbConnection.Open();
 
-            string sql = "SELECT * FROM job_positions";
+            string sql = "SELECT * FROM job_position";
 
             var jobPositions = await dbConnection.QueryAsync<JobPosition>(sql);
 
@@ -180,4 +180,5 @@ public class JobPositionsController : ControllerBase
         return new MySqlConnection(connectionString);
     }
 }
+
 
